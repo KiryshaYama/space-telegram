@@ -1,11 +1,9 @@
 import requests
 from download import download_image
 
-
-
 def fetch_spacex_last_launch():
     imgs_url = "https://api.spacexdata.com/v4/launches/latest"
-    folder_name='./spacex'
+    folder_name='./images'
     response = requests.get(imgs_url)
     imgs_links = response.json()['links']['flickr']['original']
     for img_link in imgs_links:

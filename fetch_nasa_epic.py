@@ -8,7 +8,7 @@ load_dotenv()
 
 def fetch_nasa_epic():
     date = datetime.date.today() - datetime.timedelta(days=2)
-    folder_name = './epic'
+    folder_name = './images'
     api_key=os.environ['NASA_API_KEY']
     imgs_url = f"https://api.nasa.gov/EPIC/api/natural/date/{date}?api_key={api_key}"
     response = requests.get(imgs_url)
