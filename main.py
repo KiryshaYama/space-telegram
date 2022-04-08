@@ -31,7 +31,7 @@ def fetch_spacex_last_launch():
         download_image(img_link, folder_name)
 
 def fetch_nasa_apod():
-    imgs_url = "https://api.nasa.gov/planetary/apod?api_key=lqGXoxYNDWAIij2L7pBwBAOej6VsIXE0S1CsJ72s"
+    imgs_url = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY"
     folder_name='./apod'
     params = {'count' : 30}
     response = requests.get(imgs_url, params=params)
@@ -44,12 +44,12 @@ def fetch_nasa_apod():
 def fetch_nasa_epic():
     date = datetime.date.today() - datetime.timedelta(days=2)
     folder_name = './epic'
-    imgs_url = f"https://api.nasa.gov/EPIC/api/natural/date/{date}?api_key=lqGXoxYNDWAIij2L7pBwBAOej6VsIXE0S1CsJ72s"
+    imgs_url = f"https://api.nasa.gov/EPIC/api/natural/date/{date}?api_key=DEMO_KEY"
     response = requests.get(imgs_url)
     imgs_response = response.json()
     for img_response in imgs_response:
         filename = img_response['image']
-        img_link = f'https://api.nasa.gov/EPIC/archive/natural/{date.strftime("%Y/%m/%d")}/png/{filename}.png?api_key=lqGXoxYNDWAIij2L7pBwBAOej6VsIXE0S1CsJ72s'
+        img_link = f'https://api.nasa.gov/EPIC/archive/natural/{date.strftime("%Y/%m/%d")}/png/{filename}.png?api_key=DEMO_KEY'
         download_image(img_link, folder_name)
 
 def main():
