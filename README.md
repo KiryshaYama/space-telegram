@@ -12,14 +12,17 @@ These are three scripts:
 
 SpaceX images downloading does not require any keys. 
 NASA images downloading you need api-key. Put them into
-`.env` file, and assign login to the `NASA_API_KEY` variable.
+`.env` file, and assign api-key to the `NASA_API_KEY` variable.
 To upload images you need telegram token. Put them into
-`.env` file, and assign login to the `TELEGRAM_SPACE_API` variable.
+`.env` file, and assign token to the `TELEGRAM_SPACE_API` variable.
+Put posting period into
+`.env` file, and assign period to the `POSTING_PERIOD` variable.
 It should look like this:
 
 ```
 NASA_API_KEY='Your_API-Key'
 TELEGRAM_SPACE_API='Your_telegram_token'
+POSTING_PERIOD='Your posting_period'
 ```
 
 Python3 should be already installed. 
