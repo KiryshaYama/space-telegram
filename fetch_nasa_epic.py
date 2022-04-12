@@ -6,10 +6,9 @@ from download import download_image
 from dotenv import load_dotenv
 
 
-def fetch_nasa_epic():
+def fetch_nasa_epic(api_key):
     date = datetime.date.today() - datetime.timedelta(days=2)
     folder_name = './images'
-    api_key = os.environ['NASA_API_KEY']
     imgs_url = f"https://api.nasa.gov/EPIC/api/natural\
     /date/{date}?api_key={api_key}"
     response = requests.get(imgs_url)
@@ -23,7 +22,7 @@ def fetch_nasa_epic():
 
 def main():
     load_dotenv()
-    fetch_nasa_epic()
+    fetch_nasa_epic(api_key=os.environ['NASA_API_KEY'])
 
 if __name__ == '__main__':
     main()
