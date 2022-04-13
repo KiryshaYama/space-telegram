@@ -16,13 +16,13 @@ NASA images downloading you need api-key. Put them into
 To upload images you need telegram token. Put them into
 `.env` file, and assign token to the `TELEGRAM_SPACE_API` variable.
 Put posting period into
-`.env` file, and assign period to the `POSTING_PERIOD` variable.
+`.env` file, and assign chat id to the `CHAT_ID` variable.
 It should look like this:
 
 ```
 NASA_API_KEY='Your_API-Key'
 TELEGRAM_SPACE_API='Your_telegram_token'
-POSTING_PERIOD='Your posting_period'
+CHAT_ID='@Your_chat_id'
 ```
 
 Python3 should be already installed. 
@@ -36,7 +36,7 @@ Run scripts in command line:
 python3 fetch_spacex.py
 python3 fetch_nasa_apod.py
 python3 fetch_nasa_epic.py
-python3 upload_telegram.py
+python3 upload_telegram.py posting_period
 ```
 
 ### Project Goals
