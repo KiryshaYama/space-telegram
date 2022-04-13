@@ -9,15 +9,15 @@ from dotenv import load_dotenv
 def fetch_nasa_epic(api_key):
     date = datetime.date.today() - datetime.timedelta(days=2)
     folder_name = './images'
-    imgs_url = f"https://api.nasa.gov/EPIC/api/natural\
-    /date/{date}?api_key={api_key}"
-    response = requests.get(imgs_url)
+    params = {'api_key': api_key}
+    imgs_url = f"https://api.nasa.gov/EPIC/api/natural/date/{date}"
+    response = requests.get(imgs_url, params=params)
     imgs_response = response.json()
     for img_response in imgs_response:
         filename = img_response['image']
-        img_link = f'https://api.nasa.gov/EPIC/archive/natural/\
-        {date.strftime("%Y/%m/%d")}/png/{filename}.png?api_key={api_key}'
-        download_image(img_link, folder_name)
+        img_link = f'https://api.nasa.gov/EPIC/archive/natural/' \
+                   f'{date.strftime("%Y/%m/%d")}/png/{filename}.png'
+        download_image(img_link, folder_name, params)
 
 
 def main():

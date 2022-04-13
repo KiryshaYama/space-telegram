@@ -6,8 +6,8 @@ import urllib.parse
 from pathlib import Path
 
 
-def download_image(img_url, folder_name):
-    response = requests.get(img_url)
+def download_image(img_url, folder_name, params=None):
+    response = requests.get(img_url, params=params)
     response.raise_for_status()
     filename = os.path.split(urllib.parse.urlsplit(
         urllib.parse.unquote(img_url)).path)[1]
