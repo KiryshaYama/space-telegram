@@ -12,6 +12,7 @@ def fetch_nasa_epic(api_key):
     params = {'api_key': api_key}
     imgs_url = f"https://api.nasa.gov/EPIC/api/natural/date/{date}"
     response = requests.get(imgs_url, params=params)
+    response.raise_for_status()
     imgs_response = response.json()
     for img_response in imgs_response:
         filename = img_response['image']
