@@ -17,7 +17,7 @@ def fetch_nasa_epic(api_key):
     for img_response in imgs_response:
         filename = img_response['image']
         img_link = f'https://api.nasa.gov/EPIC/archive/natural/' \
-                   f'{date.strftime("%Y/%m/%d")}/png/{filename}.png'
+                    f'{date.strftime("%Y/%m/%d")}/png/{filename}.png'
         download_image(img_link, folder_name, params)
 
 

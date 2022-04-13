@@ -25,8 +25,8 @@ def main():
     bot = telegram.Bot(token=os.environ['TELEGRAM_SPACE_API'])
     while True:
         DIR = './images'
-        with open(os.path.join(
-                           DIR, random.choice(os.listdir(DIR))), 'rb') as photo:
+        with open(os.path.join(DIR,
+                               random.choice(os.listdir(DIR))), 'rb') as photo:
             bot.send_photo(os.environ['chat_id'], photo=photo)
         time.sleep(args.posting_period)
 

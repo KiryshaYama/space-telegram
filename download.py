@@ -15,4 +15,3 @@ def download_image(img_url, folder_name, params=None):
     filepath = os.path.join(folder_name, filename)
     with open(filepath, 'wb') as file:
         file.write(response.content)
-
