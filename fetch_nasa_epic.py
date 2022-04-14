@@ -2,13 +2,13 @@ import requests
 import datetime
 import os
 
+from make_directory import make_directory
 from download import download_image
 from dotenv import load_dotenv
 
 
-def fetch_nasa_epic(api_key):
+def fetch_nasa_epic(folder_name, api_key):
     date = datetime.date.today() - datetime.timedelta(days=2)
-    folder_name = './images'
     params = {'api_key': api_key}
     imgs_url = f"https://api.nasa.gov/EPIC/api/natural/date/{date}"
     response = requests.get(imgs_url, params=params)
@@ -23,7 +23,9 @@ def fetch_nasa_epic(api_key):
 
 def main():
     load_dotenv()
-    fetch_nasa_epic(api_key=os.environ['NASA_API_KEY'])
+    folder_name = './images'
+    make_directory(folder_name)
+    fetch_nasa_epic(folder_name, api_key=os.environ['NASA_API_KEY'])
 
 if __name__ == '__main__':
     main()
