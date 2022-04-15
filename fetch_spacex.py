@@ -1,6 +1,6 @@
 import requests
 
-from make_directory import make_directory
+from pathlib import Path
 from download import download_image
 
 
@@ -14,7 +14,7 @@ def fetch_spacex_last_launch(folder_name):
 
 def main():
     folder_name = './images'
-    make_directory(folder_name)
+    Path(folder_name).mkdir(parents=True, exist_ok=True)
     fetch_spacex_last_launch(folder_name)
 
 

@@ -1,7 +1,7 @@
 # Space-telegram
 
 
-These are three scripts:
+These are four scripts:
 - `fetch_spacex.py` download images from last lounch [SpaceX api](https://api.spacexdata.com/v4/launches/latest)
 - `fetch_nasa_apod.py` download 30 randon images from [NASA APOD api](https://api.nasa.gov/#apod)
 - `fetch_nasa_epic.py` download Earth images taken 2 days ago from [NASA EPIC api](https://api.nasa.gov/#epic)

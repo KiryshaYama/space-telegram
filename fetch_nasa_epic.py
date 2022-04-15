@@ -2,7 +2,7 @@ import requests
 import datetime
 import os
 
-from make_directory import make_directory
+from pathlib import Path
 from download import download_image
 from dotenv import load_dotenv
 
@@ -24,7 +24,7 @@ def fetch_nasa_epic(folder_name, api_key):
 def main():
     load_dotenv()
     folder_name = './images'
-    make_directory(folder_name)
+    Path(folder_name).mkdir(parents=True, exist_ok=True)
     fetch_nasa_epic(folder_name, api_key=os.environ['NASA_API_KEY'])
 
 if __name__ == '__main__':
